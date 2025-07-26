@@ -1,1 +1,0 @@
-console.log("hello world this is the frist testing node");

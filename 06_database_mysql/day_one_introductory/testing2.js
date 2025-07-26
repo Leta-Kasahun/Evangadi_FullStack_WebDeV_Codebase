@@ -1,1 +1,0 @@
-console.log("javscript in node running eviroment");
