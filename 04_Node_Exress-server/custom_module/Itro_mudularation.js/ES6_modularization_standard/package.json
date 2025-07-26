@@ -1,0 +1,12 @@
+{
+  "name": "es6_modularization_standard",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "modul1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

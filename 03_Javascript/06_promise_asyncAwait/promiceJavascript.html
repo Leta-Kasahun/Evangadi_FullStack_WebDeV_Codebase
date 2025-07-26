@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promice in JS</h1>
+    <script>
+        //using fetch 
+        // fetch("https://randomuser.me/api").then(function(res){
+        //     return res.json()}).then(function(data){
+        //         console.log(data);
+        //     })
+        //creting promice by my own 
+        // let createdPromise=new Promise ((resolve,reject)=>{
+        //     resolve ("I am happy ");
+        //     reject ("sorry awful! what happen");
+        // })
+        // console.log(createdPromise);
+    //     const myPromise=new Promise((resolve,reject)=>{
+    //         let condition=true;
+    //         if(condition)resolve("yes here is the data that is important");
+    //         else reject("oop! something is went wrong");
+    //     });
+    //   myPromise.then((data)=>console.log("Data>>>",data)).catch((error)=>console.log("error>>>",error));
+
+
+    //alerm by promise
+    // function alert(name,delay){
+    //     return new Promise((resolve,reject)=>{
+    //         if(delay<0)
+    //        {
+    //          reject("alerm delay can not be nagative");
+    //        }
+    //         else{
+    //             setTimeout(()=>{
+    //                 resolve(`it is a time! wake up! ${name}`);},delay);}});} 
+    // alert("Letish",4000)
+    // .then((data)=>console.log(data))
+    // .catch((error)=>console.log(error));
+
+
+    //this can be possible to be consumed by using async await
+//     async function getup(){
+//         try{
+//       let data=await alert("Leta",3000);
+//       console.log(data);
+//         }
+//         catch(ero){
+//             console.log(error);
+//         }
+//     }
+// getup();
+// console.log("i this is not promise to alert some body so it is not waiting any time");
+
+//     </script>
+</body>
+</html>

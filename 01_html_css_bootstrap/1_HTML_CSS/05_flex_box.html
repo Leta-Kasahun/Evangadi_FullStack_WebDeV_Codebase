@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Compact Responsive Header</title>
+  <link rel="stylesheet" href="05_flex_box.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="logo">Logo</div>
+        <div id="search"><input type="text" placeholder="Search"></div>
+        <select id="language" aria-label="Select Language">
+            <option value="en">EN</option>
+            <option value="am">AM</option>
+            <option value="or">OR</option>
+        </select>
+        <button id="menu" aria-label="Toggle menu">&#9776;</button>
+        <button id="dark" aria-label="Toggle dark mode">🌙</button>
+    </header>
+
+    <nav id="nav" aria-hidden="true">
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <script>
+        const menu = document.getElementById('menu'), nav = document.getElementById('nav'),
+            dark = document.getElementById('dark'), body = document.body;
+
+        menu.onclick = () => {
+            const shown = nav.classList.toggle('show');
+            nav.setAttribute('aria-hidden', !shown);
+        };
+
+        dark.onclick = () => {
+            body.classList.toggle('dark');
+            dark.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+        };
+    </script>
+
+</body>
+
+</html>

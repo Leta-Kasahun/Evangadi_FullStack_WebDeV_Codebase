@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid Wrap</title>
+    <style>
+        section {
+            background-color: rgba(241, 239, 178, 0.5);
+            /* ✅ Combine color + opacity */
+            margin: 2em auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 1em;
+            width: 90vw;
+            max-width: 1000px;
+        }
+
+        .box {
+            height: 100px;
+            text-align: center;
+            padding-top: 0.5em;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .a {
+            background-color: steelblue;
+            color: white;
+        }
+
+        .b {
+            background-color: rgb(73, 235, 216);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+    </section>
+</body>
+
+</html>

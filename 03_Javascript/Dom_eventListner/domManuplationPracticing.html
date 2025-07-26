@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            margin-left: 30px;
+        }
+        h4{
+            background-color: red;
+            row-gap: 20px;
+            margin-right: 20px;
+        }
+      input,  button{
+          margin-top: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>D O M</h1>
+    <h4 class="camp"id="ap">Apple</h4>
+    <h4 class="camp">Amazon</h4>
+    <h4 class="camp">Tesla</h4>
+    <h4 class="camp">Microsoft</h4>
+    <h4 class="camp">Window</h4>
+    <p><b>Thank yoou !</b>for visiting my web page</p>
+     <button>button-1 </button>
+     <button>button-2</button>
+     <button>button-3</button>
+     <button>button-4</button>
+<a href="https://evangadi.com">Go to evangadi</a>
+<h3>my form</h3>
+<form action="post">
+    <input type="text"placeholder="frist name">
+    <input type="text"placeholder="last name">
+    <input type="email"placeholder="email address">
+    <input type="password"placeholder="passsword">
+    <button>submit</button>
+</form>
+<script>
+    console.dir(document);
+    // const modification=document.getElementById("ap");
+    // modification.style.color="white";
+    // modification.style.backgroundColor="steelblue";
+    // const changeByQuery=document.getElementsByClassName("camp");
+    // changeByQuery.style.color="white";
+    // changeByQuery.style.backgroundColor="blue";
+    const tabname=document.getElementsByTagName("h4");
+   for(let i=0;i<tabname.length;i++){
+  if(i%2==0)tabname[i].style.backgroundColor="steelblue";
+  else tabname[i].style.backgroundColor="lightgreen";
+   }
+
+const buttons=document.querySelectorAll("button");
+for(let i=0;i<buttons.length;i++){
+    if(i%2==1){
+        buttons[i].style.color="white";
+        buttons[i].style.backgroundColor="pink";
+    }
+    else
+     buttons[i].style.color="green";
+    buttons[i].style.backgroundColor="black";
+        
+}
+</script>
+    </body>
+</html>

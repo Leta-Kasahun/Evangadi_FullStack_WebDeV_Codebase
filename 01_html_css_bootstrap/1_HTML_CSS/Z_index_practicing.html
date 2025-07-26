@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+
+
+        .box {
+            margin: auto;
+            position: relative;
+            width: 150px;
+            transition: width 2s, height ease-out;
+            height: 160px;
+        }
+
+        .box:hover {
+            width: 400px;
+            height: 400px;
+        }
+
+        .box-red {
+            background-color: #eb5858;
+            box-shadow: 10px 19px aqua, 10px 10px gray;
+            z-index: 1;
+            left: 80px;
+        }
+
+        .box-yellow {
+            background-color: #e9f360;
+            box-shadow: 15px 10px rgb(216, 213, 213);
+            left: 65px;
+            bottom: 120px;
+            z-index: 2;
+
+        }
+
+        .box-green {
+            background-color: #2add42;
+            left: 30px;
+            box-shadow: 1px 19px rgb(136, 133, 133) inset;
+            bottom: 200px;
+            z-index: 3;
+
+        }
+
+        .over-flow {
+
+            margin: auto;
+            border: 2px solid #eb5858;
+            height: 150px;
+            width: 200px;
+            overflow: auto;
+        }
+
+        .text-sh {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 15px;
+            color: wheat;
+            text-shadow: 1px 2px 1px #4e5353;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-sh">Z-index practice</h1>
+    <section>
+        <div class="box box-red"></div>
+        <div class="box box-yellow"></div>
+        <div class="box box-green"></div>
+    </section>
+    <div class="over-flow">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia animi quidem, vitae accusamus ullam
+            voluptatibus velit modi nobis voluptate maiores et minima, eius asperiores cum incidunt quis est adipisci
+            magni Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quisquam magnam illum
+            reprehenderit totam doloribus laboriosam officiis facilis cupiditate asperiores enim necessitatibus soluta
+            corrupti deleniti voluptates eaque, ex eius libero?.</p>
+    </div>
+
+</body>
+
+</html>

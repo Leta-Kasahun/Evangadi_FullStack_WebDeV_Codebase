@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <style>
+        body {
+            background: #f0f8ff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        #welcome {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-right: 2px solid black;
+            white-space: nowrap;
+            overflow: hidden;
+            height: 40px;
+            animation: blinkCursor 0.8s steps(1) infinite;
+        }
+
+        /* @keyframes blinkCursor {
+            50% {
+                border-color: transparent;
+            } */
+        /* } */
+
+        form {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="welcome"></div>
+
+    <form onsubmit="return registerUser()">
+        <input type="text" id="fullName" placeholder="Full Name" required />
+
+        <select id="sex" required>
+            
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <input type="number" id="age" placeholder="Age" required min="16" max="100" />
+
+        <input type="text" id="department" placeholder="Department" required />
+
+        <select id="semester" required>
+            <option value="">Select Semester</option>
+            <option>1</option>
+            <option>2</option>
+            
+        </select>
+
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password (min 6 characters)" required minlength="6" />
+
+        <button type="submit">Register</button>
+        <div class="link">Already have an account?<a href="login.html"> Login</a></div>
+    </form>
+
+    <script>
+        // Infinite typing animation
+        const message = "Welcome to Registration";
+        const welcomeEl = document.getElementById("welcome");
+        const colors = ["#ff4c4c", "#ffc107", "#32cd32", "#1e90ff", "#8a2be2", "#ff1493", "#20b2aa"];
+
+        let i = 0;
+        let isDeleting = false;
+        let text = "";
+
+        function typeLoop() {
+            const currentLength = text.length;
+            const fullText = message;
+
+            if (isDeleting) {
+                text = fullText.substring(0, currentLength - 1);
+            } else {
+                text = fullText.substring(0, currentLength + 1);
+            }
+
+            welcomeEl.innerHTML = "";
+            for (let j = 0; j < text.length; j++) {
+                const span = document.createElement("span");
+                span.style.color = colors[j % colors.length];
+                span.textContent = text[j];
+                welcomeEl.appendChild(span);
+            }
+
+            let speed = isDeleting ? 60 : 100;
+
+            if (!isDeleting && text === fullText) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && text === "") {
+                isDeleting = false;
+                speed = 1800;
+            }
+
+            setTimeout(typeLoop, speed);
+        }
+
+        typeLoop(); // Start animation
+
+        // Registration logic
+        function registerUser(Event) {
+            Event.preventDefault();
+            const fullName = document.getElementById("fullName").value.trim();
+            const sex = document.getElementById("sex").value;
+            const age = document.getElementById("age").value;
+            const department = document.getElementById("department").value.trim();
+            const semester = document.getElementById("semester").value;
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!fullName || !sex || !age || !department || !semester || !email || password.length < 6) {
+                alert("Please fill all fields correctly.");
+                fullName.style.backgroundColor="red";
+                return false;
+            }
+
+            localStorage.setItem("fullName", fullName);
+            localStorage.setItem("sex", sex);
+            localStorage.setItem("age", age);
+            localStorage.setItem("department", department);
+            localStorage.setItem("semester", semester);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+
+            alert("Registration successful! Please login.");
+            window.location.href = "login.html";
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

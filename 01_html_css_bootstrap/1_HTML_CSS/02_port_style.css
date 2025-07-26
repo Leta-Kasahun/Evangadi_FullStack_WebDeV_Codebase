@@ -1,0 +1,337 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9px;
+    background-color: slateblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.2s;
+  }
+  
+  @keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+  }
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: rgb(248, 75, 162);
+    margin-bottom: 10px;
+  }
+  
+  .marquee h2 {
+    display: inline-block;
+    padding-left: 100%; 
+    animation: marquee 10s linear infinite; 
+  }
+  
+  @keyframes marquee {
+    0% {
+        transform: translate(0, 0); 
+    }
+    100% {
+        transform: translate(-100%, 0); 
+    }
+  }
+  
+  .navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+  }
+  
+  .navbar ul {
+    display: flex;
+    margin-right: 3rem;
+  }
+  
+  .navbar ul li {
+    list-style-type: none;
+    text-decoration: none;
+    margin-left: 35px;
+  }
+  
+  .navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+    text-decoration: none;
+    color: rgb(215, 235, 235);
+  }
+  
+  .navbar ul li a:hover {
+    color: rgb(23, 221, 16);
+  }
+  
+  body {
+    max-width:100%;
+    margin:0 auto;
+    justify-content: center;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #545255;
+  }
+  
+  .home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+  }
+  
+  .home-info h1 {
+    font-size: 55px;
+  }
+  
+  .home-info h2 {
+    font-size: 32px;
+    margin-top: -10px;
+  }
+  
+  .home-info p {
+    font-size: 16px;
+    font-family:'Times New Roman', Times, serif;
+    margin: 10px 0 25px;
+    text-align: justify;
+  }
+  .home-info .btn-sci {
+    /* margin-top: 10px; */
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+    margin: 10px;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #3d85f0;
+    border: 2px solid #ceebbf;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #f0f0e7;
+    font-size: 16px;
+    color: #1f2424;
+    text-decoration: none;
+    font-weight: 600;
+    transition:  0.3s, color 0.3s; 
+  }
+  
+  .btn:hover {
+    background: transparent;
+    color: #6494ee;
+    box-shadow: none;
+  }
+  
+  .home-info .btn-sci .sci {
+    margin-left: 20px;
+  }
+  
+  .home-info .btn-sci a {
+    display: flex;
+    padding: 8px;
+    border: 2px solid #ccf1b8;
+    border-radius:50%;
+    font-size: 20px;
+    color: #6d97f3;
+    margin: 10px 8px;
+    transition: 0.3s, color 0.3s; 
+  }
+  .sci a {
+    display: flex;
+    flex-direction: row;
+    text-shadow: #145c86;
+    padding: 1px; 
+    font-size: 40px; /* Increased icon size */
+    color: #7cf03d;
+    margin: 10px 8px;
+    transition: 0.3s, color 0.3s;
+  }
+  .home-info .btn-sci a:hover {
+    background: #4994e9;
+    color: #f1f4f8;
+    box-shadow: 0 0 10px #3dbdf0;
+  }
+  
+  .home-img .img-box {
+    margin-top:1px;
+    width: 22vw;
+    height: 25vw;
+    background: rgb(0, 255, 55);
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .home-img .img-box .img-item {
+    max-width: 100%;
+    position: relative;
+    box-shadow: #3dbdf0;
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    border-radius: 50%;
+    border: .1px solid #c7d5f0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .home-img .img-box .img-item img {
+    position: absolute;
+    top: 30px;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .home {
+      flex-direction: column-reverse; /* Stack elements */
+      text-align: center;
+    }}
+  #skills {
+    padding: 60px 9%;
+    color: #fff;
+  }
+  
+  #skills h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #skills ul {
+    list-style-type: none;
+  }
+  
+  #skills ul li {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  #contact {
+    padding: 60px 9%;
+    color: #fff;
+  }
+  
+  #contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #contacts form {
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  #contacts label {
+    margin-bottom: 5px;
+  }
+  
+  #contacts input,
+  #contacts textarea {
+    padding: 10px;
+    margin-right:200px;
+    margin-bottom: 15px;
+    border: 1px solid #1e21d6;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    max-width:100%;
+    padding: 10px 20px;
+    margin-right:400px ;
+    margin-left: 200px;
+    background-color: #145c86;
+    border: 1px ;
+    border-radius:10px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #1a190e;
+  }
+  
+  footer {
+    max-width: 100%;
+    background-color: #1f242d;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-left: 10px;
+  }
+  
+  footer p {
+    margin: 10px 0;
+  }
+  
+  footer a {
+    color: #7cf03d;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  .call-me {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(233, 230, 204);
+    color:#f127bf;
+    padding:5px ;
+    font-weight: 700;
+    margin: 20px 300px 0 110px;
+  
+  }
+  
+  .call-me span {
+    max-width: 600px;
+   
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+  }
+  

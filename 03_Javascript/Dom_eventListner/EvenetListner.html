@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listner</title>
+    <style>
+        *{
+            max-width: 100%;
+            margin: 0;
+            padding: 4%;
+        }
+        button{
+            background-color: #f44ef7;
+            margin-right: 100px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-left: 40px;
+            border-radius: 5px;
+            border: none;
+        }
+        body{
+            margin: 40px auto;
+        }
+        h1{
+            background-color: #3667fa;
+            color: white;
+
+            text-align: center;
+            position: sticky;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        }
+        h2{
+            background-color: #554157;
+            color:white;
+            font-family: sans-serif;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        input{
+            display: block;
+            margin: 20px;
+            background-color: #cceaf9;
+            width: 60%;
+            height: 5px;
+        }
+        div{
+           
+            display: flex;
+            justify-content: flex-start;
+        }
+        #sbmt{
+            background-color: #08b8ed;
+            text-align: center;
+            margin-left:  100px;
+            padding: 20px;
+            width: 30%;
+
+        }
+    </style>
+</head>
+<body>
+   <h1>Javascript Event Listner Example</h1>
+   <h2>HTML Event Handler attribute </h2>
+   <button type="button" id="cbgc" onclick="changeBgc()">Change BackgroundColor</button>
+   <button id="ctc"onclick="changetc()">Change Textcolor</button>
+
+   <h2>Traditional DOM Event Handler</h2> 
+<button id="cbg">Change Background with DOM</button>
+   <h2>Event Listner</h2>
+<button id="aer" >Change Textcolor</button>
+
+   <h1>Form Validation</h1>
+   <div id="form-validation">
+    <form id="form-input" action="#" method="post">
+        <input type="text" placeholder="Frist Name">
+        <input type="text" placeholder="Last Name">
+        <input type="number" placeholder="age">
+        <input type="date" placeholder="birth date DD-MM-YY form">
+        <div>
+    
+            <input type="radio" name="gender" value="male">
+            <label for="gender">Male</label>
+            <input type="radio" name="gender" value="Female">
+            <label for="gender">Female</label>
+        </div>
+        <input type="email" placeholder="Email address">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm password">
+   </div>
+ <button id="sbmt">submit</button>
+    <script>
+const modified =document.getElementById("cbgc");
+  function changeBgc(){
+   
+    modified.style.backgroundColor="red";
+  }
+  const texmodification=document.getElementById("ctc");
+  function changetc(){
+    texmodification.style.color="red";
+    texmodification.style.backgroundColor="";
+  }
+  let domchangebgc=document.getElementById("cbg");
+  domchangebgc.ondblclick=chnageNow;
+  function chnageNow(){
+    domchangebgc.style.backgroundColor="green";
+  }
+  const addEventlstr=document.getElementById("aer");
+  addEventllstr.addEventListener("click",function(){addEventlstnr.style.backgroundColor="blue";});
+ 
+    </script>
+   </form>
+</body>
+</html>

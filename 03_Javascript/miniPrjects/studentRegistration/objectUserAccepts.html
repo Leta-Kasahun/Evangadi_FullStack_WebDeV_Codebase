@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Info with localStorage</title>
+</head>
+
+<body>
+
+    <script>
+        // Try to get user data from localStorage
+        let storedUser = localStorage.getItem('user');
+
+        let user;
+
+        if (storedUser) {
+            // Parse the stored JSON string back into object
+            user = JSON.parse(storedUser);
+        } else {
+            // No stored data: ask user for input
+            user = {
+                name: prompt("Enter your name:"),
+                age: Number(prompt("Enter your age:")),
+                city: prompt("Enter your city:")
+            };
+
+            // Save the object as JSON string in localStorage
+            localStorage.setItem('user', JSON.stringify(user));
+        }
+
+        // Show user info on page
+        document.body.innerHTML = `<h2>User Info</h2>
+    <p>Name: ${user.name}</p>
+    <p>Age: ${user.age}</p>
+    <p>City: ${user.city}</p>`;
+
+        console.log(user);
+    </script>
+
+</body>
+
+</html>

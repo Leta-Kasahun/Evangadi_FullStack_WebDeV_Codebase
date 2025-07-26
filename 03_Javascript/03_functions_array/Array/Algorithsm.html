@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>algorithm</title>
+</head>
+<body>
+   <h2>Algorthim practicing</h2>
+   <script>
+    // 1 taking two numbers
+    // 2 checking if these inputs are only number 
+    // 3 if number calculating the sum
+    // 4 else return error
+    // 5 end if
+    // 6 display out put;
+//     const adder=(num1,num2)=>{
+//         if(isNaN(num1)||isNaN(num1))return "the input is not a number";
+//         else return num1+num2;
+//     }
+// const result=adder(20,40);
+// console.log(`${20} + ${40}=${result}`);
+
+//  1 prompt to accepts two input hieght, width
+//  2 check weathr it is only Number and not negative
+//  3 calculate area area<-width times hieght
+//  4 return area
+//  5 display output
+// let height=Number(window.prompt("Enter the hieght"))
+// let width=Number(window.prompt("Enter the width"))
+//  const calculateArea=(height,width)=>{
+//     if(isNaN(width)||isNaN(height))return "please enter the number value ";
+//     else if (width<=0||height<=0)return "please enter only positive number";
+//     else return 0.5*(width*height); 
+//  }
+// console.log(`the are of tringle is: ${calculateArea(width,height)}`);
+//    1 prompt to accepts all input, win, equal, lose numbers 
+//    2 validate if all inputs are only numbers
+//    3 validate if all input are non negative
+//    4 if number calculate by multplying all if win multply by 3 else if equal multply by 1 else multply by 0 
+//    5 adds all results 
+//    6 display out put
+//    7 end if
+//    let numWin,numDraws;
+//    numWin=Number(window.prompt("Enter the number of it wins"));
+//    numDraws=Number(window.prompt("Enter of drwas"));
+//    const calculatePoint=(numWin,numDraws)=>{
+//     if(isNaN(numWin)||isNaN(numDraws))return "please enter only number value";
+//     else if (numWin<0||numDraws<0)return "please provides non negative for these input";
+//     else return (`wins ${numWin} and draws ${numDraws} so the total point is ${numWin*3+numDraws*1}`);
+
+//    }
+// console.log(calculatePoint(numWin, numDraws));
+
+//detecting the  lowercase from distributed in uppercase
+// 1 promt to accepts the input 
+// 2 set it to other variable and covert it to upercase 
+// 3 defin function to check wether the uppercase 
+// 4 define variable that is empty to save the small letter
+// 5  check weather the original letter is equas with in converted toupper case 
+// 6 if equal save to the empty varibale else passs it 
+// 7 return the detected 
+// 8 display output
+// const words=window.prompt("Enter the mixed letter");
+// const detectSmallLetter= words=>{
+//     let covertedToUppercase=words.toUpperCase();
+//     let hiddenwords="";
+//     let filteredwords="";
+//     for(let i=0;i<=words.length;i++){
+//          if(covertedToUppercase.charAt(i)!==words.charAt(i)){
+//             hiddenwords+=words.charAt(i);
+//          }
+//         else filteredwords+=words.charAt(i);}
+//         console.log(`filtered words: ${filteredwords}`);  
+//         console.log( `detected words are: ${hiddenwords}`);}  
+// detectSmallLetter(words);
+
+
+//checking weathere the given two array are possible to be nisteted or not
+// 1 read the input of two array array1, array2
+// 2 sorts these array each of them 
+// 3 define  a function to check weathere possible to nested or not 
+// 4 if the min of one array(at frist index) is lessthan the seacond and the max of one array is greater than the second array(at last index)
+//  return true else false
+//  5  print out put
+//  6 end if
+
+// let array1,array2;
+array1=[10,2,3,5,-4,0,12];
+array2=[20,10,-5,-7,11,0,8];
+// //finding the min and max of array1
+// const checkNested=(array1,array2)=>{
+// let maxarray1=array1[0],minarray1=array1[0];
+
+// for(let i=0;i<array1.length;i++){
+//    if(minarray1>array1[i])minarray1=array1[i];
+//    if(maxarray1<array1[i])maxarray1=array1[i];
+// }
+// let minarray2=array2[0],maxarray2=array2[0];
+// for (let i=0;i<array2.length;i++){
+//     if(minarray2>array2[i])minarray2=array2[i];
+//     if(maxarray2<array2[i])maxarray2=array2[i];
+// }
+// if(minarray1<minarray2&&maxarray1>maxarray2)return true;
+// else return false;
+// }
+// if(checkNested(array2,array1))console.log("yes it is possible to neted the second in to the frist array");
+// else console.log("impossible to nest these array");
+//more efficient algorithsm to dot this using spread and math.max or min without for lop
+// const checkingNested=(array1,array2)=>{
+//     let mnar1=Math.min(...array1);
+//     let mxar1=Math.max(...array1);
+//     let mnar2 = Math.min(...array2);
+//     let mxar2 = Math.max(...array2);
+//     if(mnar1<mnar2&&mxar1>mxar2)return true;
+//     else false;
+// }
+//     if(checkingNested(array2,array1))console.log("yes it is possible to neted the second in to the frist array");
+//     else console.log("impossible to nest these array");
+   </script> 
+</body>
+</html>

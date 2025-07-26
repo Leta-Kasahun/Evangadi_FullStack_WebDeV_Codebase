@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root</title>
+    <style>
+        *{margin: 0;
+        padding: 0;
+      max-width: 100%;}
+      :root{
+        --bc-color: linear-gradient(90deg,rgb(70, 109, 238),rgb(28, 21, 233));
+        
+        --text-color:white;
+        --text-size:2em;
+        --text-wight:bold;
+        --text-family:Times ;
+        --text-pos:center;
+         --border-style:2px solid red;
+         --text-style:italic;
+        
+        --clr-primary:lightblue;
+
+      }
+      body{
+        background:var(--bc-color);
+
+      }
+      h1{
+        background-color:var(--clr-slate);
+        color: var(--text-color);
+        text-align: var(--text-pos);
+        font-style: var(--text-style);
+      }
+      .cotainer{
+        border: var(--border-style);
+        font-size: var(--text-size);
+      }
+      
+    </style>
+</head>
+<body>
+    <h1>Root practicing</h1>
+    <div class="cotainer"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo fuga deleniti ea ex ipsa nobis sapiente, natus, numquam dolore inventore, laudantium modi ipsam reiciendis qui odit tempore. Laborum, totam laboriosam. <details>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, corporis dolor? Eaque inventore consequuntur, doloribus recusandae expedita ut eos iusto, ex alias, unde ipsum nobis dolor distinctio placeat similique necessitatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere temporibus ad aliquam at deserunt. Placeat dolorem cupiditate molestias in dolor esse, fugiat, itaque optio cumque ullam unde earum libero expedita. <summary>more</summary>
+    </details></p></div>
+<details>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ab veniam ut tempore? Commodi, sit sapiente aperiam veniam nemo nam numquam laborum qui! Aut, autem cupiditate quas facere eius illum. <summary>some</summary></details>
+</body>
+</html>

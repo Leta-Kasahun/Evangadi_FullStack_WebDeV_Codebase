@@ -1,0 +1,60 @@
+evangadi-fullstack-webdev-codebase/
+│
+├── 01-html-css-bootstrap/         # HTML5, CSS3, Bootstrap
+│   ├── intro-to-html/
+│   ├── intro-to-css/
+│   ├── flexbox-grid/
+│   ├── responsive-design/
+│   └── bootstrap-components/
+│
+├── 02-javascript/                 # JS Fundamentals to DOM
+│   ├── basics-syntax-operators/
+│   ├── arrays-loops-functions/
+│   ├── objects-events/
+│   ├── dom-manipulation/
+│   ├── mini-projects/
+│   │   ├── calculator/
+│   │   ├── todo-list/
+│   │   └── stopwatch/
+│
+├── 03-node-express/              # Backend with Node + Express
+│   ├── nodejs-intro-modules/
+│   ├── express-server/
+│   ├── routing-params-middleware/
+│   ├── api-crud-practice/
+│   └── authentication-basics/
+│
+├── 04-databases/                 # SQL & NoSQL (MySQL + MongoDB)
+│   ├── mysql/
+│   │   ├── intro-queries/
+│   │   ├── joins-and-tables/
+│   │   └── db-integration-node/
+│   └── mongodb/
+│       ├── basic-crud-shell/
+│       ├── mongoose-models/
+│       └── integration-with-node/
+│
+├── 05-react/                     # Frontend with React
+│   ├── react-basics/
+│   ├── components-props-state/
+│   ├── event-handling/
+│   ├── hooks-useState-useEffect/
+│   ├── forms-conditional-rendering/
+│   ├── routing-useNavigate/
+│   └── mini-projects/
+│       ├── weather-app/
+│       └── movie-search/
+│
+├── 06-mern-fullstack/           # Connecting all (Advanced Phase)
+│   ├── mern-auth-app/
+│   │   ├── client/       # React
+│   │   └── server/       # Node + Express + MongoDB
+│   ├── mern-blog/
+│   └── job-board-platform/
+│
+├── assets/
+│   ├── roadmap-banner.png        # You’ll find it below
+│
+├── .gitignore
+├── README.md
+└── LICENSE

@@ -1,0 +1,20 @@
+*{ max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: center;
+    background: linear-gradient(skyblue,lightgreen);
+}
+.allbox{
+    background: #338bff;
+    color:black;
+    display: grid;
+    grid-template-rows: auto,auto,auto;
+    background: dodgerblue;
+    row-gap: 20px;
+}
+.allbox div{background-color: #fff;
+margin: 5%;
+width: 100px;
+height: 100px;}

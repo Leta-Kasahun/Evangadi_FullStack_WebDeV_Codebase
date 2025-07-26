@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+<body>
+    <h1>Local storage practicing</h1>
+<input id="usrnm"type="text"placeholder="username"> <br>
+<input id="pswrd"type="password"placeholder="password">
+<button type="submit"onclick="sotoreValue()">submit</button>
+<script>
+const storedusername=document.querySelector("#usrnm").value;
+const storedpassword=document.querySelector("#pswrd").value;
+// function sotoreValue(){
+// localStorage.setItem("username",storedusername);
+// localStorage.setItem("paasword",storedpassword);
+// alert("value is stored");
+// }
+// function getValue(){
+// console.log(localStorage.getItem("paasword"));
+// console.log(localStorage.getItem("username"));
+// }
+// getValue();
+localStorage.removeItem("username");
+localStorage.removeItem("paasword");
+</script>
+
+</body>
+</html>

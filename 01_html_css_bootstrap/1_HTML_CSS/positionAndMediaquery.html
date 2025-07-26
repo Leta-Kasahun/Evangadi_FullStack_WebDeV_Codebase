@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Position Types with Media Queries</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: steelblue;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        ol {
+            list-style: none;
+            margin: 30px 50px;
+            padding: 0;
+            position: relative;
+            /* container for absolute children */
+            min-height: 400px;
+            background: pink;
+        }
+
+        li {
+            text-align: center;
+            line-height: 50px;
+            margin: 10px 0;
+            font-weight: bold;
+            border-radius: 5px;
+            color: #111;
+            background-color: lightgray;
+            transition: all 0.3s ease;
+            height: 50px;
+            position: static;
+            /* default */
+        }
+
+        /* Position Types base styles */
+        #mn {
+            position: static;
+            background-color: #ffcccb;
+        }
+
+        #ap {
+            position: relative;
+            background-color: #add8e6;
+            top: 0;
+            left: 0;
+        }
+
+        #pa {
+            position: absolute;
+            background-color: #90ee90;
+            width: 150px;
+            height: 50px;
+        }
+
+        #av {
+            position: fixed;
+            background-color: #ffa500;
+            width: 150px;
+            height: 50px;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        #ch {
+            position: static;
+            background-color: #d8bfd8;
+        }
+
+        #bn {
+            position: relative;
+            background-color: #f0e68c;
+        }
+
+        /* Media Query 1: small screen (under 600px) */
+        @media (max-width: 599px) {
+            #mn {
+                background-color: #ff9999;
+            }
+
+            #ap {
+                top: 5px;
+                left: 5px;
+            }
+
+            #pa {
+                top: 60px;
+                left: 10px;
+            }
+
+            #av {
+                bottom: 10px;
+                left: 10px;
+            }
+
+            #ch {
+                font-size: 14px;
+            }
+
+            #bn {
+                top: 10px;
+                left: 10px;
+            }
+        }
+
+        /* Media Query 2: medium screen (600px to 899px) */
+        @media (min-width: 600px) and (max-width: 899px) {
+            #mn {
+                background-color: #ff6666;
+                display: none;
+            }
+              li:hover {
+    background-color: gold;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+            #ap {
+                top: 15px;
+                left: 15px;
+                background-color: #443c3c;
+            }
+
+            #pa {
+                top: 80px;
+                left: 50px;
+                background-color: #676256;
+            }
+
+            #av {
+                bottom: 20px;
+                left: 120px;
+                background-color: #475d61;
+            }
+
+            #ch {
+                font-size: 18px;
+            }
+
+            #bn {
+                top: 20px;
+                left: 25px;
+            }
+        }
+
+        /* Media Query 3: large screen (900px and above) */
+        @media (min-width: 900px) {
+            #mn {
+                background-color: #ff3333;
+            }
+
+            #ap {
+                top: 30px;
+                left: 30px;
+            }
+
+            #pa {
+                top: 100px;
+                left: 100px;
+                background-color: #c0f333;
+            }
+
+            #av {
+                bottom: 30px;
+                left: 250px;
+                background-color: #1444ad;
+            }
+
+            #ch {
+                font-size: 22px;
+            }
+
+            #bn {
+                top: 30px;
+                left: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Fruit List with Positions & Media Queries</h2>
+    </header>
+
+    <ol>
+        <li id="mn">Mango (static)</li>
+        <li id="ap">Apple (relative)</li>
+        <li id="pa">Papaya (absolute)</li>
+        <li id="av">Avocado (fixed)</li>
+        <li id="ch">Cherry (static)</li>
+        <li id="bn">Banana (relative)</li>
+    </ol>
+
+</body>
+
+</html>

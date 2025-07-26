@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // forEach Examples:
+ const users=[{name:"abebe",age:24},{name:"aliex",age:23},{name:"hayle",age:22}]
+    let fruits= ["apple", "banana", "orange","chery"]
+    // fruits.forEach(item => console.log(item));
+    // users.forEach(user => console.log(user.name));
+        
+    //    let words= ["hello", "world"];
+    //     words.forEach(word => console.log(word.match(/[aeiou]/g)));
+    //     words.forEach(wrd=>console.log(wrd.match(/[ad]/g)));
+    
+        
+        // tasks.forEach(task => checklist.push(`☐ ${task}`));
+        // data.forEach(obj => console.log(JSON.stringify(obj)));
+
+        // // map Examples:
+        const numbers=[1, 2, 3,4,5,6,7,8,9,10,11,12,13,14]
+        // const doubler=numbers.map(n =>( n*2));
+        // doubler.forEach(num=>console.log(num));
+        // const cuber=numbers.map(num=>num**3);
+        // cuber.forEach(num=>console.log(num));
+        //numbers.map(n => console.log(n.toString()));
+        //numbers.map(p =>console.log( `$${p}`));
+
+        //fruits.map(frt => console.log(frt.toUpperCase()));
+        // const identifiedNumber=numbers.map(num=>num%2===0?"Even":"odd");
+        // identifiedNumber.forEach(num=>console.log(num));
+        
+        // users.map(user => user.name);
+        // [10, 20].map(p => p * 1.15);
+        // ["Ali", "Sara"].map(name => `Hello, ${name}`);
+        // [200, 404].map(code => code === 200 ? "OK" : "Error");
+        // [true, false].map(v => v ? "Yes" : "No");
+        // ["a", "b"].map(val => `<li>${val}</li>`);
+        const capilazedFruit=fruits.map(fruit=>fruit[0].toUpperCase()+fruit.slice(1));
+        capilazedFruit.forEach(frt=>console.log(frt));
+        // // filter Examples:
+        // const younger=users.filter(user => user.age >= 18);
+        // younger.forEach(data=>console.log(data.age));
+        // [1, 2, 3, 4].filter(n => n % 2 === 0);
+        // ["", "hello"].filter(str => str !== "");
+        // [{ stock: 3 }, { stock: 0 }].filter(p => p.stock > 0);
+        // [{ done: true }, { done: false }].filter(t => t.done);
+         ["a@example.com", "bademail"].filter(e => console.log(e.includes("@")));
+        // ["short", "a very long comment"].filter(c => c.length > 10);
+        // [{ vip: true }, { vip: false }].filter(c => c.vip);
+        // [null, "text", undefined].filter(Boolean);
+        // [{ price: 40 }, { price: 100 }].filter(p => p.price < 50);
+
+        // // reduce Examples:
+        // [1, 2, 3].reduce((sum, n) => sum + n, 0);
+        // [2, 3, 4].reduce((prod, n) => prod * n, 1);
+        // [3, 5, 1].reduce((max, n) => n > max ? n : max);
+        // [[1], [2], [3]].reduce((flat, arr) => flat.concat(arr), []);
+        // [{ cat: "fruit" }, { cat: "veg" }].reduce((group, item) => {
+        //     group[item.cat] = (group[item.cat] || 0) + 1;
+        //     return group;
+        // }, {});
+        // ["a", "b", "a"].reduce((count, letter) => {
+        //     count[letter] = (count[letter] || 0) + 1;
+        //     return count;
+        // }, {});
+        // ["a", "b", "c"].reduce((csv, val) => csv + "," + val);
+        // [{ a: 1 }, { b: 2 }].reduce((combined, obj) => Object.assign(combined, obj), {});
+        // ["ali", "sara"].reduce((longest, name) => name.length > longest.length ? name : longest);
+        // [true, false, true].reduce((count, passed) => count + (passed ? 1 : 0), 0);
+
+        // // push Examples:
+        // let msgs = []; msgs.push("Hi!");
+        // let cart = []; cart.push("Book");
+        // logs.push("Error occurred");
+        // activity.push("Login");
+        // groupUsers.push("Ali");
+        // gameMoves.push("move-left");
+        // let arr = []; arr.push(1, 2, 3);
+        // errorList.push({ code: 500 });
+        // form.push({ label: "Name" });
+        // snapshots.push("state1");
+
+        // // pop Examples:
+        // let last = cart.pop();
+        // cart.pop(); // remove last item
+        // tabs.pop(); // close last tab
+        // orders.pop();
+        // text = text.slice(0, -1);
+        // typedKeys.pop();
+        // let val = calcStack.pop();
+        // history.pop();
+        // stack.pop();
+        // moves.pop();
+
+        // // shift Examples:
+        // let first = queue.shift();
+        // jobList.shift();
+        // emails.shift();
+        // notifications.shift();
+        // logs.shift();
+        // requests.shift();
+        // messages.shift();
+        // snapshots.shift();
+        // eventQueue.shift();
+        // tasks.shift();
+
+        // // unshift Examples:
+        // tasks.unshift("urgent task");
+        // messages.unshift("new message");
+        // notifications.unshift("System alert");
+        // comments.unshift("New comment");
+        // lobby.unshift("new player");
+        // logs.unshift("startup");
+        // alerts.unshift("emergency");
+        // queue.unshift("priority");
+        // history.unshift("new update");
+        // results.unshift("top hit");
+let capitlaizedFruits=fruits.map(fruit=>fruit[0].toUpperCase()+fruit)
+   </script> 
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filtering and reduce</title>
+</head>
+<body>
+    <h1>Filter,foreach and reduce</h1>
+    <script>
+        // const array1=["Abebe","Kebede","Derege","Devid","James","Powell"];
+      
+        // const filtershort=(element)=> element.length<=5;
+        //     let shorter6letter = array1.filter(filtershort);
+        //         console.log(shorter6letter)
+     //const numbers=[12,34,13,35,47,69,68,74,69,89,70,80];
+    //     const isEven=number=>number%2==0;
+    //     const isOdd=number=>number%2==1;
+    //  const numEven=numbers.filter(isEven);
+    //  console.log(`Even number: ${numbers.filter(isEven)}`);
+    //  console.log(`Odd number: ${numbers.filter(isOdd)}`);
+    //numbers.forEach(element=>console.log(element));
+//    const laptop=[{name:"hp",price:54000},
+//                 {name:"toshba",price: 40000 },
+//                 {name: "mac", price: 84000 },
+//                 {name: "apple", price: 104000 },
+//                 {name: "asir", price: 74000 },
+//                 { name: "leveno", price: 50000 }
+
+//                 ]
+// const inexpenciveLaptop=laptop.filter((item)=>
+// { return item.price<=50000});
+// console.log(`inexpencive laptopn in this year are: ${inexpenciveLaptop}`);
+  
+//most important meth in javascript
+    const users = [
+        { name: "Alice", age: 22 },
+        { name: "Bob", age: 30 },
+        { name: "Charlie", age: 28 }
+    ];
+users.forEach(user => console.log(user.name));
+    users.forEach(user => {
+        document.body.innerHTML += `<li>${user.name}</li>`;
+    });
+        users.forEach(user => {
+            console.log(`${user.name} is ${user.age} years old`);
+        });
+
+        let names = [];
+            users.forEach(user => names.push(user.name));
+                let sum = 0;
+                users.forEach(user => sum += user.age);
+                    users.forEach((user, index) => {
+                        console.log(`${index + 1}. ${user.name}`);
+                    });
+// validate data user input                    
+users.forEach(user => {
+                            if (!user.name || !user.age) console.warn("Missing data:", user);
+                        });
+
+
+
+
+
+                        const products = [
+                                { name: "Laptop", price: 1200 },
+                                { name: "Mouse", price: 25 },
+                                { name: "Keyboard", price: 70 },
+                                { name: "Monitor", price: 300 }
+                            ];
+                       
+
+ let cheapProducts = products.filter(p => p.price < 100);
+   
+ let students = [{ name: "A", grade: 90 }, { name: "B", grade: 60 }];
+    let passed = students.filter(s => s.grade > 70);
+      
+    
+    //map real world example
+    const prices = [100, 200, 300];
+    let discounted = prices.map(p => p * 0.9);
+    //formating
+    let formatted = prices.map(p => `$${p.toFixed(2)}`);
+// extract user na,e 
+    let usernames = users.map(user => user.name);
+//reduce used to accumulates to single result
+
+    const orders = [
+        { item: "Book", price: 15 },
+        { item: "Pen", price: 2 },
+        { item: "Notebook", price: 5 }
+    ];
+//calculates total price
+    let total = orders.reduce((sum, o) => sum + o.price, 0);
+    //count occurrense   
+    let colors = ["red", "blue", "red"];
+        let count = colors.reduce((acc, c) => {
+            acc[c] = (acc[c] || 0) + 1;
+            return acc;
+        }, {});
+    //flatten array
+    let nested = [[1], [2, 3], [4]];
+        let flat = nested.reduce((acc, arr) => acc.concat(arr), []);
+ 
+
+
+
+
+
+
+        //count vawel using foreach
+        fruits.forEach(fruit => {
+                const vowels = fruit.match(/[aeiou]/gi)?.length || 0;
+                console.log(`${fruit} has ${vowels} vowels`);
+            });
+                fruits.forEach(f => {
+                    if (f.includes("a")) console.log(f);
+                });
+//filter on string
+    const namess = ["Ali", "Tom", "Amir"];
+    const result = names.filter(name => name.startsWith("A"));
+
+//map to creates new array
+    const nums = [1, 2, 3];
+
+    const doubled = nums.map(n => n * 2);
+        const strings = nums.map(n => n.toString());
+//adding sing dollr to price
+    const pricess = [100, 200];
+    const formatteds = prices.map(p => `$${p}`);
+       //capitalizes 
+    const namesss = ["alice", "bob"];
+        const capitalized = names.map(name => name[0].toUpperCase() + name.slice(1));
+
+    </script>
+</body>
+</html>

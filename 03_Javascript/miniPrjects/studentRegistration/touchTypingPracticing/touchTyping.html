@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progressive Touch Typing Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            user-select: none;
+            background-color: #f5f5f5;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .keyboard {
+            margin: 20px auto;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background-color: #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .key-row {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .key {
+            background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 4px;
+            padding: 12px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: default;
+            user-select: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.2s, color 0.2s;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .key.space {
+            width: 200px;
+        }
+
+        .key.active {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .key.current {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .key.correct {
+            background-color: #b6fcb6;
+        }
+
+        .key.incorrect {
+            background-color: #fcb6b6;
+        }
+
+        .text-to-type {
+            font-size: 28px;
+            letter-spacing: 5px;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            min-height: 60px;
+            text-align: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            font-size: 24px;
+            letter-spacing: 4px;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .stats {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            min-height: 24px;
+            text-align: center;
+            color: #d32f2f;
+        }
+
+        button {
+            margin: 10px;
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .timer {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            height: 40px;
+            color: #333;
+        }
+
+        .best-scores {
+            margin-top: 15px;
+            font-size: 16px;
+            font-style: italic;
+            color: #555;
+            text-align: center;
+        }
+
+        #levelInfo {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Progressive Touch Typing Club</h2>
+    <div id="levelInfo"></div>
+    <div class="timer" id="timer"></div>
+    <div class="text-to-type" id="textToType"></div>
+    <textarea id="inputArea" placeholder="Start typing here..." disabled></textarea>
+    <div class="keyboard" id="keyboard"></div>
+    <div class="stats" id="stats"></div>
+    <div class="message" id="message"></div>
+    <div style="text-align: center;">
+        <button id="startBtn">Start Practice</button>
+        <button id="nextLevelBtn" disabled>Next Lesson</button>
+    </div>
+    <div class="best-scores" id="bestScores"></div>
+
+    <script>
+        const inputArea = document.getElementById('inputArea');
+        const stats = document.getElementById('stats');
+        const message = document.getElementById('message');
+        const startBtn = document.getElementById('startBtn');
+        const nextLevelBtn = document.getElementById('nextLevelBtn');
+        const textToTypeEl = document.getElementById('textToType');
+        const timerEl = document.getElementById('timer');
+        const bestScoresEl = document.getElementById('bestScores');
+        const keyboardEl = document.getElementById('keyboard');
+        const levelInfoEl = document.getElementById('levelInfo');
+
+        // QWERTY keyboard layout with staggered rows
+        const keyboardRows = [
+            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            ['', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',';'],
+            ['', '', 'z', 'x', 'c', 'v', 'b', 'n', 'm',',','.','?'],
+            [' '] 
+        ];
+
+        // Lessons as per your request
+        const lessons = [
+            ['f',' ', 'j'],               // Lesson 1: fj
+            ['k',' ', 'd','  '],               // Lesson 2: kd
+            ['d','  ', 'f', 'j',' ', 'k'],     // Lesson 3: dfjk
+            ['s', 'l'],               // Lesson 4: sl
+            ['a',' ', ';'],                //lesson 4:a;
+            ['g', 'h'],          // Lesson 6: agh
+            ['q', 'w',' ', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'], // Lesson 7: top row
+            ['z', 'x', 'c',' ', 'v', 'b', 'n', 'm'],               // Lesson 8: bottom row
+            [' ']                     // Lesson 9: space
+        ];
+
+        // All possible keys
+        const allKeys = [...new Set(keyboardRows.flat())].filter(key => key !== '');
+
+        let currentLesson = 0;
+        let textToType = '';
+        let startTime = null;
+        let timerRunning = false;
+        let countdownInterval = null;
+
+        const passSpeed = 20; // WPM threshold
+        const passAccuracy = 80; // % threshold
+
+        function loadBestScores() {
+            const bestSpeed = localStorage.getItem('bestSpeed') || 0;
+            const bestAccuracy = localStorage.getItem('bestAccuracy') || 0;
+            bestScoresEl.textContent = `Best Speed: ${bestSpeed} WPM | Best Accuracy: ${bestAccuracy}%`;
+        }
+
+        function saveBestScores(speed, accuracy) {
+            const bestSpeed = parseFloat(localStorage.getItem('bestSpeed') || 0);
+            const bestAccuracy = parseFloat(localStorage.getItem('bestAccuracy') || 0);
+            let updated = false;
+            if (speed > bestSpeed) {
+                localStorage.setItem('bestSpeed', speed.toFixed(2));
+                updated = true;
+            }
+            if (accuracy > bestAccuracy) {
+                localStorage.setItem('bestAccuracy', accuracy.toFixed(2));
+                updated = true;
+            }
+            if (updated) loadBestScores();
+        }
+
+        function createKeyboard() {
+            keyboardEl.innerHTML = '';
+            keyboardRows.forEach(row => {
+                const rowDiv = document.createElement('div');
+                rowDiv.classList.add('key-row');
+                row.forEach(key => {
+                    if (key === '') {
+                        const spacer = document.createElement('div');
+                        spacer.style.width = '20px';
+                        rowDiv.appendChild(spacer);
+                    } else {
+                        const keyDiv = document.createElement('div');
+                        keyDiv.classList.add('key');
+                        if (key === ' ') {
+                            keyDiv.classList.add('space');
+                            keyDiv.textContent = 'Space';
+                        } else {
+                            keyDiv.textContent = key.toUpperCase();
+                        }
+                        keyDiv.id = `key-${key === ' ' ? 'space' : key}`;
+                        rowDiv.appendChild(keyDiv);
+                    }
+                });
+                keyboardEl.appendChild(rowDiv);
+            });
+        }
+
+        function highlightActiveKeys(keys) {
+            allKeys.forEach(key => {
+                const el = document.getElementById(`key-${key === ' ' ? 'space' : key}`);
+                if (keys.includes(key)) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+                el.classList.remove('correct', 'incorrect', 'current');
+            });
+        }
+
+        function displayText(text) {
+            textToTypeEl.innerHTML = '';
+            for (const char of text) {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '␣' : char.toUpperCase();
+                span.className = 'char';
+                textToTypeEl.appendChild(span);
+            }
+        }
+
+        function generatePracticeText(keys, length = 40) {
+            let text = '';
+            for (let i = 0; i < length; i++) {
+                const c = keys[Math.floor(Math.random() * keys.length)];
+                text += c;
+            }
+            return text;
+        }
+
+        function calculateAccuracy(original, typed) {
+            let correctChars = 0;
+            for (let i = 0; i < typed.length; i++) {
+                if (typed[i] === original[i]) correctChars++;
+            }
+            return (correctChars / original.length) * 100;
+        }
+
+        function calculateWPM(typedLength, timeSeconds) {
+            return (typedLength / 5) / (timeSeconds / 60);
+        }
+
+        function highlightKeyboard(typed) {
+            const spans = textToTypeEl.querySelectorAll('span');
+            for (let i = 0; i < spans.length; i++) {
+                spans[i].classList.remove('correct', 'incorrect');
+            }
+
+            allKeys.forEach(key => {
+                const el = document.getElementById(`key-${key === ' ' ? 'space' : key}`);
+                el.classList.remove('correct', 'incorrect', 'current');
+            });
+
+            const typedLength = typed.length;
+            for (let i = 0; i < typedLength; i++) {
+                const char = typed[i];
+                const origChar = textToType[i];
+                const span = spans[i];
+                const keyEl = document.getElementById(`key-${char === ' ' ? 'space' : char}`);
+
+                if (!keyEl) continue;
+
+                if (char === origChar) {
+                    span.classList.add('correct');
+                    keyEl.classList.add('correct');
+                } else {
+                    span.classList.add('incorrect');
+                    keyEl.classList.add('incorrect');
+                }
+            }
+
+            if (typedLength < textToType.length) {
+                const nextChar = textToType[typedLength];
+                const nextKeyEl = document.getElementById(`key-${nextChar === ' ' ? 'space' : nextChar}`);
+                if (nextKeyEl) {
+                    nextKeyEl.classList.add('current');
+                }
+            }
+        }
+
+        inputArea.addEventListener('input', () => {
+            if (!timerRunning) return;
+            const typed = inputArea.value.toLowerCase();
+            highlightKeyboard(typed);
+
+            if (typed.length === textToType.length) {
+                timerRunning = false;
+                clearInterval(countdownInterval);
+
+                const timeElapsed = (Date.now() - startTime) / 1000;
+                const accuracy = calculateAccuracy(textToType, typed);
+                const wpm = calculateWPM(typed.length, timeElapsed);
+
+                stats.textContent = `Time: ${timeElapsed.toFixed(1)} s | Speed: ${wpm.toFixed(2)} WPM | Accuracy: ${accuracy.toFixed(2)}%`;
+
+                if (wpm >= passSpeed || accuracy >= passAccuracy) {
+                    message.textContent = '🎉 Passed! Click Next Lesson to continue.';
+                    nextLevelBtn.disabled = false;
+                    saveBestScores(wpm, accuracy);
+                } else {
+                    message.textContent = `Try again! Need ${passSpeed} WPM OR ${passAccuracy}% accuracy.`;
+                    nextLevelBtn.disabled = true;
+                }
+                inputArea.disabled = true;
+            } else {
+                const timeElapsed = (Date.now() - startTime) / 1000;
+                const accuracy = calculateAccuracy(textToType.slice(0, typed.length), typed);
+                const wpm = calculateWPM(typed.length, timeElapsed);
+                stats.textContent = `Speed: ${wpm.toFixed(2)} WPM | Accuracy: ${accuracy.toFixed(2)}%`;
+            }
+        });
+
+        function startPractice() {
+            const keys = lessons[currentLesson];
+            textToType = generatePracticeText(keys, 40);
+            displayText(textToType);
+            highlightActiveKeys(keys);
+
+            inputArea.value = '';
+            inputArea.disabled = false;
+            inputArea.focus();
+
+            stats.textContent = '';
+            message.textContent = '';
+            nextLevelBtn.disabled = true;
+
+            levelInfoEl.textContent = `Lesson ${currentLesson + 1} - Practice: ${keys.map(k => (k === ' ' ? 'Space' : k.toUpperCase())).join(', ')}`;
+
+            let countdown = 5;
+            timerEl.textContent = `Starting in ${countdown}...`;
+            inputArea.disabled = true;
+            timerRunning = false;
+
+            clearInterval(countdownInterval);
+            countdownInterval = setInterval(() => {
+                countdown--;
+                if (countdown > 0) {
+                    timerEl.textContent = `Starting in ${countdown}...`;
+                } else {
+                    clearInterval(countdownInterval);
+                    timerEl.textContent = 'Go!';
+                    inputArea.disabled = false;
+                    inputArea.focus();
+                    startTime = Date.now();
+                    timerRunning = true;
+                }
+            }, 1000);
+        }
+
+        nextLevelBtn.addEventListener('click', () => {
+            if (currentLesson < lessons.length - 1) {
+                currentLesson++;
+                startPractice();
+            } else {
+                message.textContent = '🎉 You completed all lessons! Great job!';
+                nextLevelBtn.disabled = true;
+                inputArea.disabled = true;
+            }
+        });
+
+        startBtn.addEventListener('click', () => {
+            currentLesson = 0;
+            startPractice();
+        });
+
+        createKeyboard();
+        loadBestScores();
+    </script>
+</body>
+
+</html>

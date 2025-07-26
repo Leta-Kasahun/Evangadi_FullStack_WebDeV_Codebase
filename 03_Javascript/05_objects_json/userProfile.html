@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //user profile
+        const user = {
+                username: "TechGuru",
+                email: "tech@example.com",
+                isOnline: true,
+                login: () =>{
+                    console.log(`${this.username} has logged in.`);
+                }
+            };
+
+            user.login(); // TechGuru has logged in.
+//shopping cart
+    const cartItem = {
+        name: "Laptop",
+        price: 1500,
+        quantity: 2,
+        totalPrice: ()=> {
+            return this.price * this.quantity;
+        }
+    };
+
+    console.log(cartItem.totalPrice()); // 3000
+//phone contact
+    const contact = {
+        name: "Miki",
+        phone: "0987654321",
+        call: function () {
+            console.log(`Calling ${this.name} at ${this.phone}...`);
+        }
+    };
+
+    contact.call();
+//loop throught
+    const laptop = {
+        brand: "HP",
+        model: "EliteBook",
+        ram: "16GB"
+    };
+
+    for (let key in laptop) {
+        console.log(`${key}: ${laptop[key]}`);
+    }
+//add and delete properties
+    const car = {
+        model: "Toyota"
+    };
+
+    car.year = 2022; // add
+    delete car.model; // remove
+
+    console.log(car); // { year: 2022 }
+
+    </script>
+</body>
+</html>
