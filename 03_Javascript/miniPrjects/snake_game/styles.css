@@ -1,0 +1,10 @@
+* {
+    max-width: 100%;
+    margin: 0;
+    padding: 4%;
+}
+
+.canv {
+    background-color: #88b2dd;
+    box-shadow: 10 10 10;
+}

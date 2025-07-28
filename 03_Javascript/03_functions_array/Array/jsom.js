@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
+
         // 1. Convert object to JSON string
             const person = { name: "Alice", age: 30 };
             const jsonString = JSON.stringify(person, null, 2);
@@ -73,6 +65,4 @@
             const jsonMsg = JSON.stringify(message);
             console.log(jsonMsg);
 
-    </script>
-</body>
-</html>
+  
