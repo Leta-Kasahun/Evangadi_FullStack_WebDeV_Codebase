@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
 
     // 2. Serve an HTML page
     else if (req.url === '/home' && req.method === 'GET') {
-        const html = `<html><body><h1>🏠 Home Page</h1><p>Node.js HTTP server is working!</p></body></html>`;
+        const html = `<html><body><h1> Home Page</h1><p>Node.js HTTP server is working!</p></body></html>`;
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(html);
     }
@@ -101,5 +101,5 @@ const server = http.createServer((req, res) => {
 
 // Start the server
 server.listen(port, () => {
-    console.log(`🌐 Server running at http://localhost:${port}`);
+    console.log(` Server running at http://localhost:${port}`);
 });
