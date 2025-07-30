@@ -1,0 +1,2 @@
+this is created by  file fs system in node core module to practicing file system
+this is the file that appended now after the file is creted and the file pathis given

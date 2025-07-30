@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-// 1. Create nested directories
+// // 1. Create nested directories
 const nestedDir = path.join(__dirname, 'backup', '2025', 'July');
-fs.mkdirSync(nestedDir, { recursive: true });
-console.log('Nested folders created:', nestedDir);
+// fs.mkdirSync(nestedDir, { recursive: true });
+// console.log('Nested folders created:', nestedDir);
 
 // 2. Move (rename) a file to another folder
 const oldPath = 'note.txt';
