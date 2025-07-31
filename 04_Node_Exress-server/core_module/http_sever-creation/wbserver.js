@@ -23,7 +23,7 @@ const http=require("http");
 
 
 const server2=http.createServer((req,res)=>{
-    if(req.url==""){
+    if(req.url=="/"){
     res.write("<h1>this is about home page</h1>");
     res.end();}
     else if(req.url=="/about"){

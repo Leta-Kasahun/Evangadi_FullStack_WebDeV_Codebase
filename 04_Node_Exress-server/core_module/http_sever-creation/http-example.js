@@ -76,7 +76,6 @@ const server = http.createServer((req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.end(`Hello, ${name}!`);
     }
-
     // 9. Redirect to another route
     else if (req.url === '/redirect') {
         res.writeHead(302, { 'Location': '/home' });

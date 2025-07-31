@@ -1,0 +1,25 @@
+LETA KASAHUN  
+Address Line, City, Ethiopia  
+Phone: (your phone number) | Email: (your email)
+
+OBJECTIVE
+Aspiring Software Engineer seeking opportunities to apply skills in backend development, problem-solving, and full-stack collaboration.
+
+EDUCATION
+B.Sc. in Software Engineering — (University Name), Ethiopia  
+Year of Graduation — (e.g., 2025)
+
+SKILLS
+Technical: JavaScript (ES6+), Node.js, Express, HTML, CSS  
+Database: MongoDB, MySQL  
+Tools: Git, Postman, VS Code
+
+PROJECTS
+Todo API Project — Built a RESTful API with Express ● supported CRUD operations, JSON parsing, and routing.  
+User Profile App — Created a small application to manage user profiles using Express routers and object data.
+
+VOLUNTEER / ACTIVITIES
+Coding Mentor — Assisted peers in learning Express.js and backend fundamentals in study groups.
+
+REFERENCES
+Available upon request
