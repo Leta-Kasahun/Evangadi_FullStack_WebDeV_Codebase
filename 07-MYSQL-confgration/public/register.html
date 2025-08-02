@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Registration</h1>
+        <form action="/register" method="POST">
+
+            <fieldset>
+                <legend>Student Information</legend>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first_name">First Name*</label>
+                        <input type="text" id="first_name" name="first_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="middle_name">Middle Name</label>
+                        <input type="text" id="middle_name" name="middle_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last_name">Last Name*</label>
+                        <input type="text" id="last_name" name="last_name" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sex">Sex*</label>
+                        <select id="sex" name="sex" required>
+                            <option value="">Select sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age*</label>
+                        <input type="number" id="age" name="age" min="16" max="50" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="department">Department*</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select department</option>
+                            <option value="Software">Software Engineering</option>
+                            <option value="IS">Information Systems</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="DS">Data Science</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="Civil">Civil Engineering</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semester">Semester*</label>
+                        <select id="semester" name="semester" required>
+                            <option value="">Select semester</option>
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year">Year*</label>
+                        <select id="year" name="year" required>
+                            <option value="">Select year</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Information</legend>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact_first_name">First Name*</label>
+                        <input type="text" id="contact_first_name" name="contact_first_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_middle_name">Middle Name</label>
+                        <input type="text" id="contact_middle_name" name="contact_middle_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_last_name">Last Name*</label>
+                        <input type="text" id="contact_last_name" name="contact_last_name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address*</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number*</label>
+                        <input type="tel" id="phone_number" name="phone_number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="house_number">House Number</label>
+                        <input type="text" id="house_number" name="house_number">
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="button primary">Register Student</button>
+                <a href="/students" class="button secondary">View Students</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
