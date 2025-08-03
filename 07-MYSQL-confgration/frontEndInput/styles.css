@@ -1,0 +1,46 @@
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ body {
+     background: whitesmoke;
+     margin: 10px 20px;
+
+ }
+
+ h1 {
+     background-color: steelblue;
+     color: whitesmoke;
+     text-align: center;
+     font: 700;
+     padding: 10px;
+     margin: 10px;
+ }
+
+ form {
+     background: #e6e6e6;
+     display: inline-block;
+     margin-left: 180px;
+ }
+
+ input {
+     display: block;
+     width: 200px;
+     height: 40px;
+     padding: 15px;
+     color: #262525;
+     margin: 40px;
+ }
+
+ button {
+     background: steelblue;
+     color: white;
+     padding: 5px;
+     margin-top: 20px;
+     margin-left: 100px;
+     width: 100px;
+     border-radius: 8px;
+     height: 30px;
+ }
