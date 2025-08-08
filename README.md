@@ -1,8 +1,8 @@
-<p align="center">
-  <img src="image.png" alt="Evangadi Full Stack Roadmap Banner" />
-</p>
 
-<h1 align="center">🌍 Evangadi Full Stack Web Development Bootcamp</h1>
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ab6d9410-f7e1-4150-8142-ba0dc72d8c12" />
+
+
+<h1 align="center">🌍Full Stack Web Development Road Map</h1>
 <p align="center">
   <b>Complete hands-on journey from Frontend basics to MERN Stack mastery</b><br/>
   💻 Built with dedication by <a href="https://github.com/Leta-Kasahun" target="_blank">Leta Kasahun</a> • 📚 Powered by <a href="https://www.evangadi.com" target="_blank">Evangadi Network</a>
@@ -12,7 +12,7 @@
 
 ## 🚀 Overview
 
-Welcome to the **Evangadi Full Stack Web Dev Codebase** — a complete, beginner-friendly-to-advanced project archive covering every essential web development skill:
+Welcome to the ** Full Stack Web Dev Codebase** — a complete, beginner-friendly-to-advanced project archive covering every essential web development skill:
 
 - 🎨 Responsive Frontend design (HTML, CSS, Bootstrap)
 - 💡 JavaScript mastery with practical logic building
